@@ -10,17 +10,17 @@ const router = express.Router() // Use Configuration To Use This Method
 
 app.use(express.static('./staticFile'))
 
-app.get('/', (req, res) =>{
+router.get('/', (req, res) =>{
     res.sendFile(path.join(__dirname, '/index.html'))
 })
 
 
-app.get('*', (req, res)=>{
+router.get('*', (req, res)=>{
     res.json('Wrong Route :( :(')
 })
  
 
-
+app.use('/', router)
 
 
 app.listen(5000, () =>{
