@@ -1,0 +1,12 @@
+// package.json
+    => npm init -y
+
+// install express {--save : save the comand as dependencies}
+    => npm install express --save
+
+// You Sould Define The Route In Order To Use The Routing
+    => app.get()
+    => app.podt()
+    =====================================
+    => router.get(mainRouter, Function)
+    => router.post()
