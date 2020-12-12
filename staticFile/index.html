@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Index Page</title>
     <link rel="stylesheet" href="./style.css">
+    
 </head>
 <body>
     <header>
@@ -12,9 +13,9 @@
     </header>
     <p>this is a paragraph, show how am i eexcited to be learning express framework</p>
 
-    <form action="/user" method="POST">
-        <input type="text" name="username">
-        <input type="text" name="password">
+    <form >
+        <input type="text" name="username" id="username">
+        <input type="text" name="password" id="password">
         <button>send</button>
     </form>
 
@@ -27,6 +28,29 @@
     <footer>
         <p>Hello From the Footer !!!, see yeah :):)</p>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+        crossorigin="anonymous">
+    </script>
+    <script>
+
+        $("form button").on('click', (event) =>{
+            event.preventDefault(); // STOP THE BROWSER FROM RELOADED
+
+
+            const username = $('#username').val().trim()
+            const password = $('#password').val().trim()
+
+            const data = {
+                username,
+                password
+            }
+
+            $.post('/user', data, response =>{
+                console.log(response);
+            });
+
+        });
+    </script>
     <script src="./app.js"></script>
 </body>
 </html>

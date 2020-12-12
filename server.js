@@ -28,7 +28,9 @@ router.post('/user', (req, res) =>{
     // Get The Data Posted By The Clinet
     console.log(req.body)
 
-    res.json({mes: ''})
+    const data = {username, pass} = req.body
+
+    res.json({mes: 'This is what you sent to us', data})
 })
 
 app.use('/', router) // router Configuration
