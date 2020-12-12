@@ -10,3 +10,49 @@
     =====================================
     => router.get(mainRouter, Function)
     => router.post()
+
+// Handel The Router
+
+ ============= First Methos ================
+
+app.get('/', (req, res) =>{
+    res.json('Is Works !!!')
+})
+
+app.get('/zakaria', (request, response) =>{
+    response.json('You\'re In Zakaria Route')
+})
+
+app.get('/azaraf', (req, res)=>{
+    res.json('You\'re In azaraf Profile !!')
+})
+
+app.get('*', (req, res)=>{
+    res.json('Wrong Route :( :(')
+})
+
+============== Second Methos ====================
+
+ app.get('/', (req, res) =>{
+    res.json('Is Works !!!')
+})
+
+router.get('/zakaria', (request, response) =>{
+    response.json('You\'re In Zakaria Route')
+})
+
+router.get('/azaraf', (req, res)=>{
+    res.json('You\'re In azaraf Profile !!')
+})
+
+router.get('*', (req, res)=>{
+    res.json('Wrong Route :( :(')
+})
+
+app.use('/', router); // DON'T FORGET THIS PIECE OF CODE TO USE THE SECOND METHOD
+
+
+======== Static File Should Send To The Server ===========
+
+app.use(express.static(StaticFileName)) // Contain HTML, CSS, JS, ECT
+ 
